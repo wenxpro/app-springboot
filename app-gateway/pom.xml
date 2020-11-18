@@ -8,7 +8,7 @@
         <version>2.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.fivesoft</groupId>
+    <groupId>org.fivesoft</groupId>
     <artifactId>app-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>app-gateway</name>
@@ -22,6 +22,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>

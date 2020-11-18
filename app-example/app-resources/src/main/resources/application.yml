@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+#    encoding:
+#      charset: UTF-8
+#      force: true
+#      enabled: true
+
+spring:
+  application:
+    name: wxj-dispatch
+  datasource:
+    url: jdbc:mysql://localhost:3306/wxj-dispatch?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/,/swagger-ui.html
+
+logging:
+  level:
+    root: warn
+    com.chinasoftinc.wxjdispatch: debug
+  file:
+    name: logs/log.log
+
+sys-config:

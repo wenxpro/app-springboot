@@ -1,0 +1,22 @@
+package org.fivesoft.appresources.buz.word.dto;
+
+import com.chinasoftinc.pojo.base.param.BaseDto;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+/**
+ * 分词传参 dto
+ * @author wenx
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class WordDto extends BaseDto {
+
+    private Long id;
+
+    private String content;
+}

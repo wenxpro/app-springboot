@@ -13,7 +13,7 @@
     <module>app-auth</module>
     <module>app-framework</module>
     <module>app-gateway</module>
-    <module>app-module</module>
+    <module>app-example</module>
   </modules>
 
 </project>

@@ -10,11 +10,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.fivesoft</groupId>
+    <groupId>org.fivesoft</groupId>
     <artifactId>app-framework</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>app-framework</name>
     <description>app framework</description>
+    <packaging>pom</packaging>
 
     <modules>
         <module>app-core</module>
