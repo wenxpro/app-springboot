@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app-core" />
+        <module name="app-module" />
+        <module name="app-system" />
+        <module name="app-framework" />
+        <module name="app-gateway" />
+        <module name="app-auth" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app-auth" target="1.8" />
+      <module name="app-core" target="1.8" />
+      <module name="app-framework" target="1.8" />
+      <module name="app-gateway" target="1.8" />
+      <module name="app-module" target="1.8" />
+      <module name="app-springboot" target="1.5" />
+      <module name="app-system" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="app-auth" options="-parameters" />
+      <module name="app-core" options="-parameters" />
+      <module name="app-framework" options="-parameters" />
+      <module name="app-gateway" options="-parameters" />
+      <module name="app-module" options="-parameters" />
+      <module name="app-system" options="-parameters" />
+    </option>
+  </component>
+</project>
