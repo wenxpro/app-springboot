@@ -11,7 +11,7 @@
 
   <modules>
     <module>app-framework</module>
-    <module>app-gateway</module>
+    <module>app-cloud</module>
     <module>app-example</module>
   </modules>
 
