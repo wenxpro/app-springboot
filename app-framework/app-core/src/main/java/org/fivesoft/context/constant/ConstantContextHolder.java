@@ -29,7 +29,7 @@ import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.log.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.fivesoft.common.consts.CommonConstant;
 import org.fivesoft.common.consts.SymbolConstant;
 import org.fivesoft.common.exception.ServiceException;
@@ -45,9 +45,8 @@ import static org.fivesoft.common.exception.enums.ServerExceptionEnum.CONSTANT_E
  * @author xuyuxiang, fengshuonan
  * @date 2020/4/14 15:34
  */
+@Slf4j
 public class ConstantContextHolder {
-
-    private static final Log log = Log.get();
 
     /**
      * 获取租户功能是否开启
@@ -56,7 +55,7 @@ public class ConstantContextHolder {
      * @date 2020/9/3
      */
     public static Boolean getTenantOpenFlag() {
-        return getSysConfigWithDefault("GUNS_TENANT_OPEN", Boolean.class, false);
+        return getSysConfigWithDefault("APP_TENANT_OPEN", Boolean.class, false);
     }
 
     /**
@@ -66,7 +65,7 @@ public class ConstantContextHolder {
      * @date 2020/7/8 9:53
      */
     public static String getDruidMonitorPassword() {
-        return getSysConfigWithDefault("GUNS_DRUID_PASSWORD", String.class, RandomUtil.randomString(10));
+        return getSysConfigWithDefault("APP_DRUID_PASSWORD", String.class, RandomUtil.randomString(10));
     }
 
     /**
@@ -76,7 +75,7 @@ public class ConstantContextHolder {
      * @date 2020/7/8 9:53
      */
     public static String getDruidMonitorUsername() {
-        return getSysConfigWithDefault("GUNS_DRUID_USERNAME", String.class, RandomUtil.randomString(10));
+        return getSysConfigWithDefault("APP_DRUID_USERNAME", String.class, RandomUtil.randomString(10));
     }
 
     /**
@@ -86,7 +85,7 @@ public class ConstantContextHolder {
      * @date 2020/6/20 22:13
      */
     public static List<String> getUnXssFilterUrl() {
-        String gunsUnXssFilterUrl = getSysConfigWithDefault("GUNS_UN_XSS_FILTER_URL", String.class, null);
+        String gunsUnXssFilterUrl = getSysConfigWithDefault("APP_UN_XSS_FILTER_URL", String.class, null);
         if (ObjectUtil.isEmpty(gunsUnXssFilterUrl)) {
             return CollectionUtil.newArrayList();
         } else {
@@ -101,7 +100,7 @@ public class ConstantContextHolder {
      * @date 2020/6/20 22:13
      */
     public static Boolean getDemoEnvFlag() {
-        return getSysConfigWithDefault("GUNS_DEMO_ENV_FLAG", Boolean.class, false);
+        return getSysConfigWithDefault("APP_DEMO_ENV_FLAG", Boolean.class, false);
     }
 
 
@@ -114,7 +113,7 @@ public class ConstantContextHolder {
      * @date 2020/6/19 18:08
      */
     public static String getJwtSecret() {
-        return getSysConfigWithDefault("GUNS_JWT_SECRET", String.class, RandomUtil.randomString(32));
+        return getSysConfigWithDefault("APP_JWT_SECRET", String.class, RandomUtil.randomString(32));
     }
 
     /**
@@ -124,7 +123,7 @@ public class ConstantContextHolder {
      * @date 2020/6/19 18:08
      */
     public static String getDefaultPassWord() {
-        return getSysConfigWithDefault("GUNS_DEFAULT_PASSWORD", String.class, CommonConstant.DEFAULT_PASSWORD);
+        return getSysConfigWithDefault("APP_DEFAULT_PASSWORD", String.class, CommonConstant.DEFAULT_PASSWORD);
     }
 
     /**
@@ -134,7 +133,7 @@ public class ConstantContextHolder {
      * @date 2020/7/9 16:18
      */
     public static Long getSessionTokenExpireSec() {
-        return getSysConfigWithDefault("GUNS_SESSION_EXPIRE", Long.class, 2 * 60 * 60L);
+        return getSysConfigWithDefault("APP_SESSION_EXPIRE", Long.class, 2 * 60 * 60L);
     }
 
     /**
@@ -146,7 +145,7 @@ public class ConstantContextHolder {
      * @date 2020/6/19 18:08
      */
     public static Long getTokenExpireSec() {
-        return getSysConfigWithDefault("GUNS_TOKEN_EXPIRE", Long.class, 86400L);
+        return getSysConfigWithDefault("APP_TOKEN_EXPIRE", Long.class, 86400L);
     }
 
     /**
@@ -156,7 +155,7 @@ public class ConstantContextHolder {
      * @date 2020/6/19 18:09
      */
     public static String getDefaultFileUploadPathForWindows() {
-        return getSysConfigWithDefault("GUNS_FILE_UPLOAD_PATH_FOR_WINDOWS", String.class, "");
+        return getSysConfigWithDefault("APP_FILE_UPLOAD_PATH_FOR_WINDOWS", String.class, "");
     }
 
     /**
@@ -166,7 +165,7 @@ public class ConstantContextHolder {
      * @date 2020/6/19 18:09
      */
     public static String getDefaultFileUploadPathForLinux() {
-        return getSysConfigWithDefault("GUNS_FILE_UPLOAD_PATH_FOR_LINUX", String.class, "");
+        return getSysConfigWithDefault("APP_FILE_UPLOAD_PATH_FOR_LINUX", String.class, "");
     }
 
     /**
@@ -176,7 +175,7 @@ public class ConstantContextHolder {
      * @date 2020/6/19 18:09
      */
     public static Boolean getEnableSingleLogin() {
-        return getSysConfigWithDefault("GUNS_ENABLE_SINGLE_LOGIN", Boolean.class, false);
+        return getSysConfigWithDefault("APP_ENABLE_SINGLE_LOGIN", Boolean.class, false);
     }
 
     /**
@@ -186,7 +185,7 @@ public class ConstantContextHolder {
      * @date 2020/7/20 9:20
      **/
     public static String getIpGeoApi() {
-        return getSysConfig("GUNS_IP_GEO_API", String.class, false);
+        return getSysConfig("APP_IP_GEO_API", String.class, false);
     }
 
     /**
@@ -196,7 +195,7 @@ public class ConstantContextHolder {
      * @date 2020/7/20 10:33
      **/
     public static String getIpGeoAppCode() {
-        return getSysConfig("GUNS_IP_GEO_APP_CODE", String.class, false);
+        return getSysConfig("APP_IP_GEO_APP_CODE", String.class, false);
     }
 
     /**
@@ -212,7 +211,7 @@ public class ConstantContextHolder {
         String configValue = ConstantContext.me().getStr(configCode);
         if (ObjectUtil.isEmpty(configValue)) {
             // 将默认值加入到缓存常量
-            log.warn(">>> 系统配置sys_config表中存在空项，configCode为：{}，系统采用默认值：{}", configCode, defaultValue);
+            log.warn(">>> configCode为：{}，系统采用默认值：{}", configCode, defaultValue);
             ConstantContext.me().put(configCode, defaultValue);
             return defaultValue;
         } else {
@@ -237,7 +236,7 @@ public class ConstantContextHolder {
         String configValue = ConstantContext.me().getStr(configCode);
         if (ObjectUtil.isEmpty(configValue)) {
             if (nullThrowExp) {
-                String format = StrUtil.format(">>> 系统配置sys_config表中存在空项，configCode为：{}", configCode);
+                String format = StrUtil.format(">>> configCode为：{} ", configCode);
                 log.error(format);
                 throw new ServiceException(CONSTANT_EMPTY.getCode(), format);
             } else {
@@ -248,7 +247,7 @@ public class ConstantContextHolder {
                 return Convert.convert(clazz, configValue);
             } catch (Exception e) {
                 if (nullThrowExp) {
-                    String format = StrUtil.format(">>> 系统配置sys_config表中存在格式错误的值，configCode={}，configValue={}", configCode, configValue);
+                    String format = StrUtil.format(">>> configCode={}，configValue={}", configCode, configValue);
                     log.error(format);
                     throw new ServiceException(CONSTANT_EMPTY.getCode(), format);
                 } else {
