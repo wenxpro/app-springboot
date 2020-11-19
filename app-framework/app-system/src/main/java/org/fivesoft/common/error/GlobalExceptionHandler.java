@@ -3,18 +3,18 @@ package org.fivesoft.common.error;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;
-import com.chinasoftinc.consts.CommonConstant;
-import com.chinasoftinc.consts.SymbolConstant;
-import com.chinasoftinc.context.requestno.RequestNoContext;
-import com.chinasoftinc.exception.DemoException;
-import com.chinasoftinc.exception.ServiceException;
-import com.chinasoftinc.exception.enums.ParamExceptionEnum;
-import com.chinasoftinc.exception.enums.RequestMethodExceptionEnum;
-import com.chinasoftinc.exception.enums.RequestTypeExceptionEnum;
-import com.chinasoftinc.exception.enums.ServerExceptionEnum;
-import com.chinasoftinc.exception.enums.abs.AbstractBaseExceptionEnum;
-import com.chinasoftinc.pojo.response.ErrorResponseData;
-import com.chinasoftinc.util.ResponseUtil;
+import org.fivesoft.common.consts.CommonConstant;
+import org.fivesoft.common.consts.SymbolConstant;
+import org.fivesoft.context.requestno.RequestNoContext;
+import org.fivesoft.common.exception.DemoException;
+import org.fivesoft.common.exception.ServiceException;
+import org.fivesoft.common.exception.enums.ParamExceptionEnum;
+import org.fivesoft.common.exception.enums.RequestMethodExceptionEnum;
+import org.fivesoft.common.exception.enums.RequestTypeExceptionEnum;
+import org.fivesoft.common.exception.enums.ServerExceptionEnum;
+import org.fivesoft.common.exception.enums.abs.AbstractBaseExceptionEnum;
+import org.fivesoft.pojo.response.ErrorResponseData;
+import org.fivesoft.util.ResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.mybatis.spring.MyBatisSystemException;
@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static com.chinasoftinc.consts.AopSortConstant.GLOBAL_EXP_HANDLER_AOP;
+import static org.fivesoft.common.consts.AopSortConstant.GLOBAL_EXP_HANDLER_AOP;
 
 
 /**

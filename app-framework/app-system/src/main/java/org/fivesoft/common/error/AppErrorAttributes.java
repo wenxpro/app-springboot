@@ -2,10 +2,10 @@ package org.fivesoft.common.error;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.http.HttpStatus;
-import com.chinasoftinc.exception.PermissionExceptionEnum;
-import com.chinasoftinc.exception.ServiceException;
-import com.chinasoftinc.exception.enums.ServerExceptionEnum;
-import com.chinasoftinc.pojo.response.ErrorResponseData;
+import org.fivesoft.common.exception.ServiceException;
+import org.fivesoft.common.exception.enums.PermissionExceptionEnum;
+import org.fivesoft.common.exception.enums.ServerExceptionEnum;
+import org.fivesoft.pojo.response.ErrorResponseData;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.web.context.request.WebRequest;

@@ -1,11 +1,10 @@
 package org.fivesoft.appresources.buz.word.controller;
 
-import com.chinasoftinc.pojo.response.ResponseData;
-import com.chinasoftinc.pojo.response.SuccessResponseData;
-import com.chinasoftinc.wxjdispatch.buz.word.dto.WordDto;
-import com.chinasoftinc.wxjdispatch.buz.word.entity.Word;
-import com.chinasoftinc.wxjdispatch.buz.word.service.WordService;
 import io.swagger.annotations.ApiOperation;
+import org.fivesoft.appresources.buz.word.dto.WordDto;
+import org.fivesoft.appresources.buz.word.service.WordService;
+import org.fivesoft.pojo.response.ResponseData;
+import org.fivesoft.pojo.response.SuccessResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;

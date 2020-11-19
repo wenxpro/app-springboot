@@ -10,10 +10,17 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <modules>
-    <module>app-auth</module>
     <module>app-framework</module>
     <module>app-gateway</module>
     <module>app-example</module>
   </modules>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>

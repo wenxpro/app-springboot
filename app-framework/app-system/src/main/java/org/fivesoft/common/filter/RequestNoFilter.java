@@ -2,7 +2,7 @@ package org.fivesoft.common.filter;
 
 
 
-import com.chinasoftinc.context.requestno.RequestNoContext;
+import org.fivesoft.context.requestno.RequestNoContext;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.UUID;
 
-import static com.chinasoftinc.consts.CommonConstant.REQUEST_NO_HEADER_NAME;
+import static org.fivesoft.common.consts.CommonConstant.REQUEST_NO_HEADER_NAME;
 
 
 /**

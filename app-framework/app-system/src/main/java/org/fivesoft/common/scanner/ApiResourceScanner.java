@@ -2,9 +2,9 @@ package org.fivesoft.common.scanner;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
-import com.chinasoftinc.consts.SymbolConstant;
-import com.chinasoftinc.context.resources.ApiResourceContext;
-import com.chinasoftinc.util.AopTargetUtil;
+import org.fivesoft.common.consts.SymbolConstant;
+import org.fivesoft.context.resources.ApiResourceContext;
+import org.fivesoft.util.AopTargetUtil;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Controller;

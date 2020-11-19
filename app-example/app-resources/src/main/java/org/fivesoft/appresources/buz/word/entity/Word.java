@@ -3,9 +3,9 @@ package org.fivesoft.appresources.buz.word.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.chinasoftinc.pojo.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.fivesoft.pojo.base.entity.BaseEntity;
 
 /**
  * @author wenx

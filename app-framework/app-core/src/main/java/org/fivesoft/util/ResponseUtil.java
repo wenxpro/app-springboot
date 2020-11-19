@@ -3,7 +3,7 @@ package org.fivesoft.util;
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.http.ContentType;
 import com.alibaba.fastjson.JSON;
-import com.chinasoftinc.pojo.response.ErrorResponseData;
+import org.fivesoft.pojo.response.ErrorResponseData;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

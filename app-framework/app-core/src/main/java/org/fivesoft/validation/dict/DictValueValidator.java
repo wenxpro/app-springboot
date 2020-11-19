@@ -1,7 +1,8 @@
 package org.fivesoft.validation.dict;
 
 
-import com.chinasoftinc.context.system.SystemContextHolder;
+
+import org.fivesoft.context.system.SystemContextHolder;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

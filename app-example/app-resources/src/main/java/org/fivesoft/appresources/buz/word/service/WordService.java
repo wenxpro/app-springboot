@@ -3,12 +3,12 @@ package org.fivesoft.appresources.buz.word.service;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.chinasoftinc.enums.CommonStatusEnum;
-import com.chinasoftinc.factory.PageFactory;
-import com.chinasoftinc.wxjdispatch.buz.word.dto.WordDto;
-import com.chinasoftinc.wxjdispatch.buz.word.entity.Word;
-import com.chinasoftinc.wxjdispatch.buz.word.mapper.WordMapper;
-import com.chinasoftinc.common.page.PageResult;
+import org.fivesoft.appresources.buz.word.dto.WordDto;
+import org.fivesoft.appresources.buz.word.entity.Word;
+import org.fivesoft.appresources.buz.word.mapper.WordMapper;
+import org.fivesoft.common.page.PageResult;
+import org.fivesoft.enums.CommonStatusEnum;
+import org.fivesoft.factory.PageFactory;
 import org.springframework.stereotype.Service;
 
 /**

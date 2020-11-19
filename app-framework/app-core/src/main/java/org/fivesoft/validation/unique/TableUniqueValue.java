@@ -8,9 +8,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import static com.chinasoftinc.consts.CommonConstant.DEFAULT_LOGIC_DELETE_VALUE;
-import static com.chinasoftinc.consts.CommonConstant.STATUS;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static org.fivesoft.common.consts.CommonConstant.DEFAULT_LOGIC_DELETE_VALUE;
+import static org.fivesoft.common.consts.CommonConstant.STATUS;
 
 /**
  * 验证表的的某个字段值是否在是唯一值

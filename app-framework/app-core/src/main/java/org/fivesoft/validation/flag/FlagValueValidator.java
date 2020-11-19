@@ -1,7 +1,7 @@
 package org.fivesoft.validation.flag;
 
 import cn.hutool.core.util.StrUtil;
-import com.chinasoftinc.enums.YesOrNotEnum;
+import org.fivesoft.enums.YesOrNotEnum;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

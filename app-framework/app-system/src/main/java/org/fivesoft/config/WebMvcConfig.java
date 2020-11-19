@@ -1,10 +1,10 @@
 package org.fivesoft.config;
 
-import com.chinasoftinc.common.error.AppErrorAttributes;
-import com.chinasoftinc.common.filter.RequestNoFilter;
-import com.chinasoftinc.common.filter.xss.XssFilter;
-import com.chinasoftinc.common.validator.AppValidator;
-import com.chinasoftinc.common.web.AppRequestResponseBodyMethodProcessor;
+import org.fivesoft.common.error.AppErrorAttributes;
+import org.fivesoft.common.filter.RequestNoFilter;
+import org.fivesoft.common.filter.xss.XssFilter;
+import org.fivesoft.common.validator.AppValidator;
+import org.fivesoft.common.web.AppRequestResponseBodyMethodProcessor;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

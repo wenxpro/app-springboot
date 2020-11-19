@@ -1,7 +1,7 @@
 package org.fivesoft.appresources.buz.word.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.chinasoftinc.wxjdispatch.buz.word.entity.Word;
+import org.fivesoft.appresources.buz.word.entity.Word;
 
 /**
  * 分词 词库mapper

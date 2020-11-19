@@ -1,8 +1,8 @@
 package org.fivesoft.appresources.buz.test;
 
-import com.chinasoftinc.pojo.response.ResponseData;
-import com.chinasoftinc.pojo.response.SuccessResponseData;
 import io.swagger.annotations.ApiOperation;
+import org.fivesoft.pojo.response.ResponseData;
+import org.fivesoft.pojo.response.SuccessResponseData;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

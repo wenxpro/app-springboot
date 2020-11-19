@@ -2,8 +2,8 @@ package org.fivesoft.factory;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
-import com.chinasoftinc.pojo.base.node.BaseTreeNode;
 import lombok.Data;
+import org.fivesoft.pojo.base.node.BaseTreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

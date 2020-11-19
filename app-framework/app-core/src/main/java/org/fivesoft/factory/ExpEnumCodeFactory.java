@@ -1,7 +1,7 @@
 package org.fivesoft.factory;
 
 
-import com.chinasoftinc.annotion.ExpEnumType;
+import org.fivesoft.annotion.ExpEnumType;
 
 /**
  * 异常枚举code值快速创建

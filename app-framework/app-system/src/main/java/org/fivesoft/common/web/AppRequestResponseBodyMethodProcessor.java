@@ -1,6 +1,6 @@
 package org.fivesoft.common.web;
 
-import com.chinasoftinc.context.param.RequestParamContext;
+import org.fivesoft.context.param.RequestParamContext;
 import org.springframework.core.Conventions;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.converter.HttpMessageConverter;

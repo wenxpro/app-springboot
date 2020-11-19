@@ -1,11 +1,12 @@
 package org.fivesoft.validation.unique;
 
 
-import com.chinasoftinc.context.group.RequestGroupContext;
-import com.chinasoftinc.context.group.RequestParamIdContext;
-import com.chinasoftinc.context.system.SystemContextHolder;
-import com.chinasoftinc.pojo.base.param.BaseDto;
-import com.chinasoftinc.pojo.base.validate.UniqueValidateParam;
+
+import org.fivesoft.context.group.RequestGroupContext;
+import org.fivesoft.context.group.RequestParamIdContext;
+import org.fivesoft.context.system.SystemContextHolder;
+import org.fivesoft.pojo.base.param.BaseDto;
+import org.fivesoft.pojo.base.validate.UniqueValidateParam;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

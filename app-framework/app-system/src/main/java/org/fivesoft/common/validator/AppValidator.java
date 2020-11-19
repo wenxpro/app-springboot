@@ -1,14 +1,14 @@
 package org.fivesoft.common.validator;
 
-import com.chinasoftinc.context.group.RequestGroupContext;
-import com.chinasoftinc.context.group.RequestParamIdContext;
+import org.fivesoft.context.group.RequestGroupContext;
+import org.fivesoft.context.group.RequestParamIdContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.Errors;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import java.beans.PropertyDescriptor;
 
-import static com.chinasoftinc.consts.CommonConstant.ID;
+import static org.fivesoft.common.consts.CommonConstant.ID;
 
 
 /**

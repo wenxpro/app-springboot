@@ -1,10 +1,10 @@
 package org.fivesoft.appresources.buz.word.dto;
 
-import com.chinasoftinc.pojo.base.param.BaseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.fivesoft.pojo.base.param.BaseDto;
 
 /**
  * 分词传参 dto

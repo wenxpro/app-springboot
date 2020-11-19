@@ -1,8 +1,8 @@
 package org.fivesoft.enums;
 
-import com.chinasoftinc.exception.ServiceException;
-import com.chinasoftinc.exception.enums.StatusExceptionEnum;
 import lombok.Getter;
+import org.fivesoft.common.exception.ServiceException;
+import org.fivesoft.common.exception.enums.StatusExceptionEnum;
 
 /**
  * 公共状态

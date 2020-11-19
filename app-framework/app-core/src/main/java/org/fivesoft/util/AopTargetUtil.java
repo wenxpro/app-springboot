@@ -1,7 +1,7 @@
 package org.fivesoft.util;
 
 import cn.hutool.log.Log;
-import com.chinasoftinc.context.requestno.RequestNoContext;
+import org.fivesoft.context.requestno.RequestNoContext;
 import org.springframework.aop.framework.AdvisedSupport;
 import org.springframework.aop.framework.AopProxy;
 import org.springframework.aop.support.AopUtils;

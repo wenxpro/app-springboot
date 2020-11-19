@@ -1,8 +1,8 @@
 package org.fivesoft.util;
 
 
-import com.chinasoftinc.exception.ServiceException;
-import com.chinasoftinc.exception.enums.ServerExceptionEnum;
+import org.fivesoft.common.exception.ServiceException;
+import org.fivesoft.common.exception.enums.ServerExceptionEnum;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

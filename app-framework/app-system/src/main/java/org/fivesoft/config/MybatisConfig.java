@@ -2,7 +2,7 @@ package org.fivesoft.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import com.chinasoftinc.common.fieldfill.CustomMetaObjectHandler;
+import org.fivesoft.common.fieldfill.CustomMetaObjectHandler;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
