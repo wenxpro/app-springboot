@@ -8,9 +8,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>org.fivesoft</groupId>
-	<artifactId>app-im</artifactId>
+	<artifactId>app-cloud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>app-im</name>
 	<description>spring cloud 示例服务</description>
 
 	<properties>

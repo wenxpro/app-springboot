@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>org.fivesoft</groupId>
-            <artifactId>app-system</artifactId>
+            <artifactId>app-auth</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
