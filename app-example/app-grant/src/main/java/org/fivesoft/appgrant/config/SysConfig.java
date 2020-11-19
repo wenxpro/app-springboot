@@ -1,4 +1,4 @@
-package org.fivesoft.appresources.config;
+package org.fivesoft.appgrant.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

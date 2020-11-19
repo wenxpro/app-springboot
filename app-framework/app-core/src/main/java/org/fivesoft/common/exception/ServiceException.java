@@ -10,7 +10,6 @@ import org.fivesoft.common.exception.enums.abs.AbstractBaseExceptionEnum;
  * @author xuyuxiang
  * @date 2020/4/8 15:54
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 public class ServiceException extends RuntimeException {
 

@@ -1,3 +1,4 @@
+
 server:
   port: 8080
   servlet:
@@ -35,9 +36,9 @@ logging:
   file:
     name: logs/log.log
 
-#mybaitsÁõ∏ÂÖ≥ÈÖçÁΩÆ
+#mybaitsœ‡πÿ≈‰÷√
 mybatis-plus:
-  mapper-locations: classpath*:org.fivesoft.appresources/**/mapping/*.xml, classpath:/META-INF/modeler-mybatis-mappings/*.xml
+  mapper-locations: classpath*:org.fivesoft/**/mapping/*.xml, classpath:/META-INF/modeler-mybatis-mappings/*.xml
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true

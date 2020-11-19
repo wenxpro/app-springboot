@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020/3/18 10:49
  */
 @Configuration
-@MapperScan(basePackages = {"com.chinasoftinc.wxjdispatch.buz.**.mapper"})
+@MapperScan(basePackages = {"org.fivesoft.**.mapper"})
 public class MybatisConfig {
 
     /**

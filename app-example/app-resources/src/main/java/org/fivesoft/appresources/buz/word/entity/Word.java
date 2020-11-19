@@ -9,7 +9,6 @@ import org.fivesoft.pojo.base.entity.BaseEntity;
 
 /**
  * @author wenx
- *
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

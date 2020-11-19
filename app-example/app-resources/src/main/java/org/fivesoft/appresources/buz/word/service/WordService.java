@@ -13,34 +13,35 @@ import org.springframework.stereotype.Service;
 
 /**
  * 分词 词库 service
+ *
  * @author wenx
  * @date 2020-11-12
  */
 @Service
 public class WordService extends ServiceImpl<WordMapper, Word> {
 
-    public void add(WordDto dto){
+    public void add(WordDto dto) {
         Word word = new Word();
         word.setContent(dto.getContent());
         word.setStatus(CommonStatusEnum.ENABLE.getCode());
         super.save(word);
     }
 
-    public void edit(WordDto dto){
+    public void edit(WordDto dto) {
         Word word = new Word();
         word.setContent(dto.getContent());
         word.setId(dto.getId());
         super.saveOrUpdate(word);
     }
 
-    public void delete(WordDto dto){
+    public void delete(WordDto dto) {
         Word word = new Word();
         word.setId(dto.getId());
         word.setStatus(CommonStatusEnum.DELETED.getCode());
         super.update();
     }
 
-    public PageResult<Word> page(WordDto dto){
+    public PageResult<Word> page(WordDto dto) {
         LambdaQueryWrapper<Word> queryWrapper = new LambdaQueryWrapper<>();
         if (ObjectUtil.isNotNull(dto)) {
             if (ObjectUtil.isNotEmpty(dto.getId())) {

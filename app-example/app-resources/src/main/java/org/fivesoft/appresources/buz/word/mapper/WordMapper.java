@@ -5,6 +5,7 @@ import org.fivesoft.appresources.buz.word.entity.Word;
 
 /**
  * 分词 词库mapper
+ *
  * @author wenx
  * @date 2020-11-12
  */

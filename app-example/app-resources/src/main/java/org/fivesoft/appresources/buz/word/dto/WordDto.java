@@ -8,6 +8,7 @@ import org.fivesoft.pojo.base.param.BaseDto;
 
 /**
  * 分词传参 dto
+ *
  * @author wenx
  */
 @EqualsAndHashCode(callSuper = true)

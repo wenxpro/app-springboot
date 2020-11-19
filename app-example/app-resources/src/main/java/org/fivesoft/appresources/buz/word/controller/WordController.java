@@ -18,13 +18,14 @@ import javax.annotation.Resource;
 
 /**
  * 分词词库controller
+ *
  * @author wenx
  * @date 2020-11-12
  */
 @RestController
 public class WordController {
 
-    @Resource
+    @Autowired
     WordService wordService;
 
 
@@ -55,8 +56,6 @@ public class WordController {
         wordService.delete(dto);
         return new SuccessResponseData();
     }
-
-
 
 
 }

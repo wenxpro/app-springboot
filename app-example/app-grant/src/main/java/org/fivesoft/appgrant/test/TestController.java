@@ -1,4 +1,4 @@
-package org.fivesoft.appresources.buz.test;
+package org.fivesoft.appgrant.test;
 
 import io.swagger.annotations.ApiOperation;
 import org.fivesoft.pojo.response.ResponseData;

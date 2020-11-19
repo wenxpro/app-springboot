@@ -1,4 +1,4 @@
-package org.fivesoft.appresources.aspect;
+package org.fivesoft.appgrant.aspect;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
