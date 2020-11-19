@@ -24,7 +24,7 @@ Guns采用APACHE LICENSE 2.0开源协议，您在使用过程中，需要注意�
  */
 package org.fivesoft.appgrant.config;
 
-import org.fivesoft.consts.SpringSecurityConstant;
+import org.fivesoft.appgrant.config.consts.SpringSecurityConstant;
 import org.fivesoft.modular.auth.service.impl.AuthServiceImpl;
 import org.fivesoft.security.JwtAuthenticationTokenFilter;
 import org.fivesoft.security.entrypoint.JwtAuthenticationEntryPoint;
