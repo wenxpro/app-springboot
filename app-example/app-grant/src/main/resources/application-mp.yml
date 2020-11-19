@@ -1,0 +1,19 @@
+#mybaits plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:org.fivesoft.modular/**/mapping/*.xml,classpath*:org.fivesoft.appgrant/**/mapping/*.xml, classpath:/META-INF/modeler-mybatis-mappings/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    banner: false
+    db-config:
+      id-type: assign_id
+      table-underline: true
+    enable-sql-runner: true
+  configuration-properties:
+    prefix:
+    blobType: BLOB
+    boolValue: TRUE
