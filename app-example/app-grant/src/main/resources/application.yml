@@ -8,7 +8,7 @@ server:
       enabled: true
 spring:
   profiles:
-    include: config,db,mp,redis
+    include: db,mp
   mvc:
     static-path-pattern: /**
   resources:

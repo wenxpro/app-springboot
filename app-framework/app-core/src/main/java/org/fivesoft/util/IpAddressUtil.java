@@ -31,8 +31,8 @@ import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.log.Log;
 import com.alibaba.fastjson.JSONPath;
-import org.fivesoft.common.consts.CommonConstant;
-import org.fivesoft.common.consts.SymbolConstant;
+import org.fivesoft.consts.CommonConstant;
+import org.fivesoft.consts.SymbolConstant;
 import org.fivesoft.context.constant.ConstantContextHolder;
 import org.fivesoft.context.requestno.RequestNoContext;
 

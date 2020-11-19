@@ -26,8 +26,8 @@ package org.fivesoft.modular.role.enums;
 
 
 import org.fivesoft.annotion.ExpEnumType;
-import org.fivesoft.common.consts.SysExpEnumConstant;
-import org.fivesoft.common.exception.enums.abs.AbstractBaseExceptionEnum;
+import org.fivesoft.consts.SysExpEnumConstant;
+import org.fivesoft.exception.enums.abs.AbstractBaseExceptionEnum;
 import org.fivesoft.factory.ExpEnumCodeFactory;
 
 /**

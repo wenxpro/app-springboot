@@ -8,7 +8,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import java.beans.PropertyDescriptor;
 
-import static org.fivesoft.common.consts.CommonConstant.ID;
+import static org.fivesoft.consts.CommonConstant.ID;
 
 
 /**

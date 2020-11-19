@@ -3,15 +3,15 @@ package org.fivesoft.common.error;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;
-import org.fivesoft.common.consts.CommonConstant;
-import org.fivesoft.common.exception.DemoException;
-import org.fivesoft.common.exception.ServiceException;
+import org.fivesoft.consts.CommonConstant;
+import org.fivesoft.exception.DemoException;
+import org.fivesoft.exception.ServiceException;
 import org.fivesoft.context.requestno.RequestNoContext;
-import org.fivesoft.common.exception.enums.ParamExceptionEnum;
-import org.fivesoft.common.exception.enums.RequestMethodExceptionEnum;
-import org.fivesoft.common.exception.enums.RequestTypeExceptionEnum;
-import org.fivesoft.common.exception.enums.ServerExceptionEnum;
-import org.fivesoft.common.exception.enums.abs.AbstractBaseExceptionEnum;
+import org.fivesoft.exception.enums.ParamExceptionEnum;
+import org.fivesoft.exception.enums.RequestMethodExceptionEnum;
+import org.fivesoft.exception.enums.RequestTypeExceptionEnum;
+import org.fivesoft.exception.enums.ServerExceptionEnum;
+import org.fivesoft.exception.enums.abs.AbstractBaseExceptionEnum;
 import org.fivesoft.pojo.response.ErrorResponseData;
 import org.fivesoft.util.ResponseUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -31,12 +31,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.fivesoft.common.consts.SymbolConstant;
+import org.fivesoft.consts.SymbolConstant;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static org.fivesoft.common.consts.AopSortConstant.GLOBAL_EXP_HANDLER_AOP;
+import static org.fivesoft.consts.AopSortConstant.GLOBAL_EXP_HANDLER_AOP;
 
 
 /**

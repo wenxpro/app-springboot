@@ -28,7 +28,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.ObjectUtil;
 import lombok.Data;
-import org.fivesoft.common.consts.CommonConstant;
+import org.fivesoft.consts.CommonConstant;
 import org.fivesoft.common.node.LoginMenuTreeNode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

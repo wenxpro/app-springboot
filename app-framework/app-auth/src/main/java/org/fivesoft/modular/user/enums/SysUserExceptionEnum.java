@@ -25,8 +25,8 @@ Guns采用APACHE LICENSE 2.0开源协议，您在使用过程中，需要注意�
 package org.fivesoft.modular.user.enums;
 
 import org.fivesoft.annotion.ExpEnumType;
-import org.fivesoft.common.consts.SysExpEnumConstant;
-import org.fivesoft.common.exception.enums.abs.AbstractBaseExceptionEnum;
+import org.fivesoft.consts.SysExpEnumConstant;
+import org.fivesoft.exception.enums.abs.AbstractBaseExceptionEnum;
 import org.fivesoft.factory.ExpEnumCodeFactory;
 
 /**

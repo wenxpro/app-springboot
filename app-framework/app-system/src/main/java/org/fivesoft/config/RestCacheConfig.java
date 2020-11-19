@@ -2,8 +2,8 @@ package org.fivesoft.config;
 
 import cn.hutool.cache.CacheUtil;
 import cn.hutool.cache.impl.TimedCache;
-import org.fivesoft.common.cache.MappingCache;
-import org.fivesoft.common.cache.ResourceCache;
+import org.fivesoft.cache.MappingCache;
+import org.fivesoft.cache.ResourceCache;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

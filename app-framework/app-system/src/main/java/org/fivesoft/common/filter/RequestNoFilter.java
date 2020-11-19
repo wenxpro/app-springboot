@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.UUID;
 
-import static org.fivesoft.common.consts.CommonConstant.REQUEST_NO_HEADER_NAME;
+import static org.fivesoft.consts.CommonConstant.REQUEST_NO_HEADER_NAME;
 
 
 /**

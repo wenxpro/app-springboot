@@ -2,7 +2,7 @@ package org.fivesoft.config;
 
 import cn.hutool.cache.CacheUtil;
 import cn.hutool.cache.impl.TimedCache;
-import org.fivesoft.common.cache.UserCache;
+import org.fivesoft.cache.UserCache;
 import org.fivesoft.context.constant.ConstantContextHolder;
 import org.fivesoft.login.SysLoginUser;
 import org.springframework.context.annotation.Bean;

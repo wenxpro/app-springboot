@@ -26,11 +26,11 @@ package org.fivesoft.security.entrypoint;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.log.Log;
-import org.fivesoft.common.cache.ResourceCache;
-import org.fivesoft.common.exception.ServiceException;
-import org.fivesoft.common.exception.enums.AuthExceptionEnum;
-import org.fivesoft.common.exception.enums.PermissionExceptionEnum;
-import org.fivesoft.common.exception.enums.ServerExceptionEnum;
+import org.fivesoft.cache.ResourceCache;
+import org.fivesoft.exception.ServiceException;
+import org.fivesoft.exception.enums.AuthExceptionEnum;
+import org.fivesoft.exception.enums.PermissionExceptionEnum;
+import org.fivesoft.exception.enums.ServerExceptionEnum;
 import org.fivesoft.util.ResponseUtil;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
