@@ -6,6 +6,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.fivesoft.appgrant.aspect.bean.LogBean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -41,19 +42,10 @@ public class SysAccessLog {
             // 接收到请求，记录请求内容
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             assert attributes != null;
-            HttpServletRequest req = attributes.getRequest();
-            // 记录下请求内容
-            log.info("[HTTP <<<] ");
-            log.info("[HTTP_URL] : {}", req.getRequestURL().toString());
-            log.info("[HTTP_METHOD] : {}", req.getMethod());
-            log.info("[HTTP_ACTION] : {}", pjp.getSignature().getDeclaringTypeName() + "." + pjp.getSignature().getName());
-            Object[] args = getMethodArg(pjp.getArgs());
-            log.info("[HTTP_PARAMS] : {}", JSON.toJSONString(args));
-            log.info("[REMOTE_IP] : {}", req.getRemoteAddr());
-
             //运行方法
             Object o = pjp.proceed();
-            log.info("[HTTP_RESPONSE]: {}", JSON.toJSONString(o));
+            LogBean logBean = handlerHTTP( attributes.getRequest(),pjp,o);
+            log.info("[HTTP_>>>]: {}", JSON.toJSONString(logBean));
             return o;
         } catch (Throwable throwable) {
             throw new Exception(throwable.getMessage(), throwable);
@@ -61,6 +53,17 @@ public class SysAccessLog {
             long etime = System.currentTimeMillis();
             log.info("[HTTP_TIME] : {}", (etime - stime) + "ms");
         }
+    }
+
+    private LogBean handlerHTTP(HttpServletRequest req,ProceedingJoinPoint pjp,Object o){
+        LogBean logBean = new LogBean();
+        logBean.setUrl(req.getRequestURL().toString());
+        logBean.setMethod(req.getMethod());
+        logBean.setAction(pjp.getSignature().getDeclaringTypeName() + "." + pjp.getSignature().getName());
+        logBean.setParams(JSON.toJSONString(getMethodArg(pjp.getArgs())));
+        logBean.setIp(req.getRemoteAddr());
+        logBean.setResponse(JSON.toJSONString(o));
+        return logBean;
     }
 
 
