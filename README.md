@@ -1,7 +1,7 @@
-####项目介绍
+##### 项目介绍
 最近研究了下guns，感觉规范性强，抽象能力好，强烈推荐大家一起学习，前后端分离版本传送门 https://gitee.com/stylefeng/guns-separation
 这个版本基于SpringBoot, 整合springmvc + springsecurity+ mybatis-plus，包含了用户、授权、租户、机构、应用等众多模块，感真实的开发中可能很多模块用不到，所以想着讲权限与业务剥离，拆分成不需要认证和需要认证的两个部分，简单的分了下，也对这个有了更多的理解和认识
-####结构说明
+##### 结构说明
 ![image.png](https://upload-images.jianshu.io/upload_images/6380064-2b072d92ccd19822.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 - app-core 原有的core结构不变，保留大部分常量与通用实体，
 - app-system 将原有的system 拆分为 auth 和 system 两个部分，可以直接引用system，不需要认证
@@ -14,7 +14,7 @@
 ![image.png](https://upload-images.jianshu.io/upload_images/6380064-9a5045b7fa33f287.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![image.png](https://upload-images.jianshu.io/upload_images/6380064-ab7e4d1ea9699b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-####其他说明
+##### 其他说明
 - 更改了导出easypoi为easy-excel
 - 更改了注解型日志异步记录为普通的aop环绕通知
 - 另外项目的 cache 和 token 默认存储都在内存中，redis需要额外进行拓展
