@@ -117,23 +117,6 @@ public interface SysUserService extends IService<SysUser> {
      */
     void changeStatus(SysUserParam sysUserParam);
 
-    /**
-     * 授权角色
-     *
-     * @param sysUserParam 授权参数
-     * @author xuyuxiang
-     * @date 2020/3/28 16:54
-     */
-    void grantRole(SysUserParam sysUserParam);
-
-    /**
-     * 授权数据
-     *
-     * @param sysUserParam 授权参数
-     * @author xuyuxiang
-     * @date 2020/3/28 16:54
-     */
-    void grantData(SysUserParam sysUserParam);
 
     /**
      * 更新信息
@@ -153,16 +136,6 @@ public interface SysUserService extends IService<SysUser> {
      */
     void updatePwd(SysUserParam sysUserParam);
 
-    /**
-     * 获取用户的数据范围（组织机构id集合）
-     *
-     * @param userId 用户id
-     * @param orgId  组织机构id
-     * @return 数据范围id集合（组织机构id集合）
-     * @author xuyuxiang
-     * @date 2020/4/5 17:23
-     */
-    List<Long> getUserDataScopeIdList(Long userId, Long orgId);
 
     /**
      * 根据用户id获取姓名
@@ -173,26 +146,6 @@ public interface SysUserService extends IService<SysUser> {
      * @date 2020/5/6 15:02
      */
     String getNameByUserId(Long userId);
-
-    /**
-     * 拥有角色
-     *
-     * @param sysUserParam 查询参数
-     * @return 角色id集合
-     * @author xuyuxiang
-     * @date 2020/5/29 14:10
-     */
-    List<Long> ownRole(SysUserParam sysUserParam);
-
-    /**
-     * 拥有数据
-     *
-     * @param sysUserParam 查询参数
-     * @return 数据范围id集合
-     * @author xuyuxiang
-     * @date 2020/5/29 14:10
-     */
-    List<Long> ownData(SysUserParam sysUserParam);
 
     /**
      * 重置密码

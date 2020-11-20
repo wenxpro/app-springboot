@@ -130,33 +130,6 @@ public class SysUserController {
         return new SuccessResponseData();
     }
 
-    /**
-     * 授权角色
-     *
-     * @author xuyuxiang
-     * @date 2020/3/28 16:05
-     */
-    @Permission
-    @DataScope
-    @PostMapping("/sysUser/grantRole")
-    public ResponseData grantRole(@RequestBody @Validated(SysUserParam.grantRole.class) SysUserParam sysUserParam) {
-        sysUserService.grantRole(sysUserParam);
-        return new SuccessResponseData();
-    }
-
-    /**
-     * 授权数据
-     *
-     * @author xuyuxiang
-     * @date 2020/3/28 16:05
-     */
-    @Permission
-    @DataScope
-    @PostMapping("/sysUser/grantData")
-    public ResponseData grantData(@RequestBody @Validated(SysUserParam.grantData.class) SysUserParam sysUserParam) {
-        sysUserService.grantData(sysUserParam);
-        return new SuccessResponseData();
-    }
 
     /**
      * 更新信息
@@ -182,29 +155,7 @@ public class SysUserController {
         return new SuccessResponseData();
     }
 
-    /**
-     * 拥有角色
-     *
-     * @author xuyuxiang
-     * @date 2020/3/28 14:46
-     */
-    @Permission
-    @GetMapping("/sysUser/ownRole")
-    public ResponseData ownRole(@Validated(SysUserParam.detail.class) SysUserParam sysUserParam) {
-        return new SuccessResponseData(sysUserService.ownRole(sysUserParam));
-    }
 
-    /**
-     * 拥有数据
-     *
-     * @author xuyuxiang
-     * @date 2020/3/28 14:46
-     */
-    @Permission
-    @GetMapping("/sysUser/ownData")
-    public ResponseData ownData(@Validated(SysUserParam.detail.class) SysUserParam sysUserParam) {
-        return new SuccessResponseData(sysUserService.ownData(sysUserParam));
-    }
 
     /**
      * 重置密码

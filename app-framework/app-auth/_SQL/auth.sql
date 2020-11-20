@@ -21,19 +21,3 @@ CREATE TABLE `sys_user`  (
   `update_user` bigint(20) NULL DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统用户表' ROW_FORMAT = Dynamic;
-
-DROP TABLE IF EXISTS `sys_user_role`;
-CREATE TABLE `sys_user_role`  (
-  `id` bigint(20) NOT NULL COMMENT '主键',
-  `user_id` bigint(20) NOT NULL COMMENT '用户id',
-  `role_id` bigint(20) NOT NULL COMMENT '角色id',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统用户角色表' ROW_FORMAT = Dynamic;
-
-DROP TABLE IF EXISTS `sys_user_role`;
-CREATE TABLE `sys_user_role`  (
-  `id` bigint(20) NOT NULL COMMENT '主键',
-  `user_id` bigint(20) NOT NULL COMMENT '用户id',
-  `role_id` bigint(20) NOT NULL COMMENT '角色id',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统用户角色表' ROW_FORMAT = Dynamic;

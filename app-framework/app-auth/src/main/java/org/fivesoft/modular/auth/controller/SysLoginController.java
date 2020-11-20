@@ -58,7 +58,6 @@ public class SysLoginController {
     public ResponseData login(@RequestBody Dict dict) {
         String account = dict.getStr("account");
         String password = dict.getStr("password");
-        String tenantCode = dict.getStr("tenantCode");
 
         String token = authService.login(account, password);
         return new SuccessResponseData(token);

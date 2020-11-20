@@ -49,8 +49,6 @@ import org.fivesoft.modular.user.factory.SysUserFactory;
 import org.fivesoft.modular.user.mapper.SysUserMapper;
 import org.fivesoft.modular.user.param.SysUserParam;
 import org.fivesoft.modular.user.result.SysUserResult;
-import org.fivesoft.modular.user.service.SysUserDataScopeService;
-import org.fivesoft.modular.user.service.SysUserRoleService;
 import org.fivesoft.modular.user.service.SysUserService;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
@@ -68,12 +66,6 @@ import java.util.Set;
  */
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
-
-    @Resource
-    private SysUserRoleService sysUserRoleService;
-
-    @Resource
-    private SysUserDataScopeService sysUserDataScopeService;
 
     @Override
     public SysUser getUserByCount(String account) {
@@ -102,18 +94,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         //查询非删除状态，排除超级管理员
         queryWrapper.ne("sys_user.status", CommonStatusEnum.DELETED.getCode())
                 .ne("sys_user.admin_type", AdminTypeEnum.SUPER_ADMIN.getCode());
-
-        //如果是超级管理员则获取所有用户，否则只获取其数据范围的用户
-        boolean superAdmin = LoginContextHolder.me().isSuperAdmin();
-        if (!superAdmin) {
-            List<Long> dataScope = sysUserParam.getDataScope();
-            if (ObjectUtil.isEmpty(dataScope)) {
-                return new PageResult<>(new Page<>());
-            } else {
-                Set<Long> dataScopeSet = CollectionUtil.newHashSet(dataScope);
-                queryWrapper.in("sys_emp.org_id", dataScopeSet);
-            }
-        }
         return new PageResult<>(this.baseMapper.page(PageFactory.defaultPage(), queryWrapper));
     }
 
@@ -145,13 +125,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
     @Override
     public void add(SysUserParam sysUserParam) {
         checkParam(sysUserParam, false);
-        boolean superAdmin = LoginContextHolder.me().isSuperAdmin();
         SysUser sysUser = new SysUser();
         BeanUtil.copyProperties(sysUserParam, sysUser);
         SysUserFactory.fillAddCommonUserInfo(sysUser);
         sysUser.setPassword(BCrypt.hashpw(sysUser.getPassword(), BCrypt.gensalt()));
         this.save(sysUser);
-        Long sysUserId = sysUser.getId();
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -162,17 +140,8 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         if (AdminTypeEnum.SUPER_ADMIN.getCode().equals(sysUser.getAdminType())) {
             throw new ServiceException(SysUserExceptionEnum.USER_CAN_NOT_DELETE_ADMIN);
         }
-        boolean superAdmin = LoginContextHolder.me().isSuperAdmin();
-
         sysUser.setStatus(CommonStatusEnum.DELETED.getCode());
         this.updateById(sysUser);
-        Long id = sysUser.getId();
-
-        //删除该用户对应的用户-角色表关联信息
-        sysUserRoleService.deleteUserRoleListByUserId(id);
-
-        //删除该用户对应的用户-数据范围表关联信息
-        sysUserDataScopeService.deleteUserDataScopeListByUserId(id);
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -225,23 +194,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         }
     }
 
-    @Transactional(rollbackFor = Exception.class)
-    @Override
-    public void grantRole(SysUserParam sysUserParam) {
-        SysUser sysUser = this.querySysUser(sysUserParam);
-        boolean superAdmin = LoginContextHolder.me().isSuperAdmin();
-        sysUserRoleService.grantRole(sysUserParam);
-    }
-
-    @Transactional(rollbackFor = Exception.class)
-    @Override
-    public void grantData(SysUserParam sysUserParam) {
-        SysUser sysUser = this.querySysUser(sysUserParam);
-        boolean superAdmin = LoginContextHolder.me().isSuperAdmin();
-
-        sysUserDataScopeService.grantData(sysUserParam);
-    }
-
     @Override
     public void updateInfo(SysUserParam sysUserParam) {
         SysUser sysUser = this.querySysUser(sysUserParam);
@@ -264,22 +216,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         this.updateById(sysUser);
     }
 
-    @Override
-    public List<Long> getUserDataScopeIdList(Long userId, Long orgId) {
-        Set<Long> userDataScopeIdSet = CollectionUtil.newHashSet();
-        if (ObjectUtil.isAllNotEmpty(userId, orgId)) {
-
-            //获取该用户对应的数据范围集合
-            List<Long> userDataScopeIdListForUser = sysUserDataScopeService.getUserDataScopeIdList(userId);
-
-            //获取该用户的角色对应的数据范围集合
-            List<Long> userDataScopeIdListForRole = sysUserRoleService.getUserRoleDataScopeIdList(userId, orgId);
-
-            userDataScopeIdSet.addAll(userDataScopeIdListForUser);
-            userDataScopeIdSet.addAll(userDataScopeIdListForRole);
-        }
-        return CollectionUtil.newArrayList(userDataScopeIdSet);
-    }
 
     @Override
     public String getNameByUserId(Long userId) {
@@ -288,18 +224,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             throw new ServiceException(SysUserExceptionEnum.USER_NOT_EXIST);
         }
         return sysUser.getName();
-    }
-
-    @Override
-    public List<Long> ownRole(SysUserParam sysUserParam) {
-        SysUser sysUser = this.querySysUser(sysUserParam);
-        return sysUserRoleService.getUserRoleIdList(sysUser.getId());
-    }
-
-    @Override
-    public List<Long> ownData(SysUserParam sysUserParam) {
-        SysUser sysUser = this.querySysUser(sysUserParam);
-        return sysUserDataScopeService.getUserDataScopeIdList(sysUser.getId());
     }
 
     @Override
